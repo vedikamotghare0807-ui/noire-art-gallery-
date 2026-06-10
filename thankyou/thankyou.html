@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#000;
+  color:#f2f2f2;
+  font-family:Arial, sans-serif;
+  text-align:center;
+}
+
+.container{
+  max-width:700px;
+  text-align: center;
+  padding: 40px;
+  background: #111;
+  border: 1px solid #c6a75e;
+}
+
+h1{
+  font-family: 'Playfair Display',serif;
+  text-align: center;
+    display: block;
+    font-size: 22px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c9b37e;
+    margin-bottom: 40px;
+  
+}
+
+a{
+  color:#c6a75e;
+  text-decoration:none;
+}
+.art-name{
+  font-size: 22px;
+  margin: 20px 0;
+}
+.details{
+  margin: 30px 0;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #ccc;
+}
+button{margin-top: 30px;
+padding: 12px 30px;
+background: #c6a75e;
+cursor: pointer;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>THANK YOU</h1>
+  <div class="art-name" id="artworkDisplay"></div>
+  <div class="details">
+    Your request has been successfully received.<br>
+    Our team will contact you shortly with further details regarding availability and acquisition process.<br><br>
+    A confirmation has been recorded for this artwork selection. 
+  </div>
+ <a href="work2.html"> 
+  <button type="button">Return to Works</button>
+</a></div>
+  <script>
+    const params= new URLSearchParams(window.location.search);
+    const artwork = params.get("artwork");
+
+    if(artwork){
+      document.getElementById("artworkDisplay").textContent = "Selected Artwork:" + artwork;
+    }
+    function goBack(){
+      window.location.href="works.html";
+    }
+  </script>
+
+</body>
+</html>

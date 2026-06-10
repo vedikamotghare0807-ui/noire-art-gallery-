@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta  name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Works</title>
+        <meta name="desciption" content="Get in touch with Noire Gallery.">
+  <meta name="author" content="Noire Gallery">
+  <meta property="og:title" content="Noire-Contact">
+  <meta property="og:desciption" content="Curated in shadows. Works by Elias Noir. ">
+  <meta property="og:image" content="images/aboutnoire.jpg">
+  <meta property="og:type" content="website">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Noire Art Gallery">
+  <meta property="twitter:desciption" content="Curated in shadows.">
+  <meta property="twitter:image" content="images/aboutnoire.jpg">
+
+        <style>
+          :root{--black:#0b0b0b;--soft:#151515;--gold:#c6a75e;--text:#e0e0e0;--muted:#8f8f8f;--surface: #111;--text:#e0e0e0;}
+            *{margin:0;padding:0;box-sizing: border-box;}
+            body{background:#0b0b0b;color:#eee;line-height:1.6;font-family: Georgia,sans-serif;}
+            .featured{margin: 150px auto;max-width: 1100px;}
+            h4{text-align:center;display: block;
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c9b37e;
+      margin-bottom: 40px;
+    }
+            details{margin: 60px 0;}
+            summary{cursor: pointer;font-size: 26px;font-weight: 300;list-style: none;}
+            summary::-webkit-details-marker{display: none;}
+            details > p{margin-top: 10px;font-size: 13px;letter-spacing: 3px;text-transform: uppercase;color: #777;}
+            blockquote{margin-top: 15px;font-style: italic;color: #666;}
+            .center{text-align: center;}
+            .row{display:flex;justify-content: space-between;}
+            .left{text-align: left;}
+            .right{text-align: right;}
+            /* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 70px;
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  gap: 38px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #d6d6d6;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #f5d27a;
+  color: #f5d27a;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #f5d27a, #caa64d);
+  transition: 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+/* Brand */
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #f5d27a;
+}
+.gold-divider {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(to right, #c9b37e, #f5e6b0, #c9b37e);
+  margin: 60px auto;
+}
+.contact-wrapper{max-width: 1400px;margin:auto; padding: 80px 8%;}
+.contact-header{text-align:center;margin-bottom: 100px;}
+.contact-header h1{letter-spacing: 6px;
+      font-size: 40px;
+      color: #c6a75e;
+      margin-bottom : 60px;
+      font-weight: 400;
+      margin-top: 40px;}
+.contact-header p{font-size: 18px;color:#ccc;max-width: 700px;margin: auto;}
+.gallery-overview{text-align: center;font-size: 16px;color:#aaa;margin-bottom: 80px;max-width: 900px;margin-left: auto;margin-right:auto ;}
+.team-section{display:grid;grid-template-columns: repeat(auto-fit,minmax(280px,1fr));gap:60px;margin-bottom:100px;}
+.team-member{position:relative;padding-left:20px;cursor:pointer;transition: transform 0.3s ease;}
+.team-member :hover{transform: translateY(-5px);}
+.team-member h3{font-size: 20px;color:#c6a75e;margin-bottom: 5px;letter-spacing: 2px;}
+.team-member span{display: block;font-size: 14px;color:#ccc;margin-bottom: 10px;letter-spacing: 2px;}
+.team-member p{font-size: 14px;color:#aaa;font-style:italic ; opacity: 0;max-height: 0;overflow: hidden;transition: opacity 0.4s ease,max-height 0.4s ease;}
+.team-member:hover p{opacity: 1;max-height: 100px;}
+.philosophy-section{text-align: center;margin-bottom: 100px;}
+.philosophy-section p{font-size: 20px;color:#c6a75e;margin:40px 0;position: relative;font-style: italic;opacity: 0;transform: translateY(20px);animation:fadeInUp 1s forwards;animation-delay: 0.3s;}
+@keyframes fadeInUp{to{opacity: 1;transform: translateY(0);}}
+.philosophy-section p::before,.philosophy-section p::after{font-size: 48px;color:#c6a75e;position: absolute;}
+.philosophy-section p::before{left:-30px;top:-20px;}
+.philosophy-section p::after{right:-30px;bottom:-20px;}
+.featured-artists{text-align: center;margin-bottom: 100px;}
+.featured-artists h2{color: #c6a75e;font-size: 18px;letter-spacing: 6px;margin-bottom: 60px;}
+.artist-grid{display: grid;grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));gap: 60px;max-width:110px;margin: auto;}
+.artist-card{padding:40px 20px;border-top: 1px solid rgba(212, 175, 55,0.3 );border-bottom:1px solid rgba(212, 175, 55,0.3 ) ;transition: all 0.4s ease;}
+.artist-card h3{font-size: 20px;color:#ffffff;letter-spacing: 1px;margin-bottom: 12px;}
+.artist-card span{font-size: 13px;letter-spacing: 3px;color: #888;text-transform: uppercase;}
+.artist-card:hover{border-top: 1px solid #c6a75e;transform: translateY(-6px);}
+.artist-card:hover span{color: #c6a75e;}
+.quote{margin-top: 25px;font-size: 14px;color: #666;font-style: italic;max-width: 420px;line-height: 1.8;opacity: 0;max-height: 0;overflow: hidden;transition: all 0.4s ease;}
+.quote.active{opacity: 1;max-height: 200px;}
+.artist-top.quote{margin-left: auto;margin-right: auto;}
+.artist-left .quote{max-width: 350px;}
+.artist-right .quote{max-width: 350px;margin-left: auto;}
+.artist-top h2,.artist-left h3,.artist-right h3{cursor: pointer;transition: opacity 0.3s ease;}
+.artist-top h2:hover,.artist-left h3:hover,.artist-right h3:hover{opacity: 0.7;}
+.curatotial-notes{text-align: center;margin-bottom: 100px;max-width: 900px;margin-left: auto;margin-right: auto;}
+.curatotial-notes h2{color: #c6a75e;font-size: 22px;letter-spacing: 3px;margin-bottom: 30px;}
+.curatotial-notes p{font-size: 16px;color: #ccc;font-style: italic;margin-bottom: 20px;opacity:0;transform: translateY(20px);animation:fadeInUp 1s forwards;}
+.location-section{display:flex;justify-content: space-between;flex-wrap:wrap;margin-bottom: 100px;}
+.location-item{margin-bottom:40px;transition: transform 0.3s ease;}
+.location-item h3{color: #c6a75e;font-size: 16px;margin-bottom: 8px;letter-spacing: 1px;}
+.location-item p{color:#ccc;font-size: 14px;letter-spacing: 1px;}
+@media(max-width:1024px){
+    .team-section{grid-template-columns: repeat(auto-fit,minmax(220px,1fr));}
+    .location-section{flex-direction: column;padding-left: 0;border-left: none;}
+    .row{flex-direction: column;gap:50px;}
+    .left
+    .right{
+      text-align: center;
+    }
+}
+/* ===== FOOTER ===== */
+    .luxury-footer {
+      padding: 70px 20px;
+      text-align: center;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #555;
+    }
+    .cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #c9b37e;
+  border-radius: 50%;
+  position: fixed;
+  top:0;
+  left:0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate( -50%, -50%);
+  transition: transform 0.1 ease;
+}
+.cursor-ring {
+width: 32px;
+height: 32px;
+border: 1px solid rgba(201, 179, 126, 0.5);
+position: fixed;
+top: 0;
+left: 0;
+pointer-events: none;
+z-index: 9998;
+transform: translate( -50%, -50%);
+transition: all  0.15s ease;
+}
+a:hover ~ .cursor-ring,
+button:hover ~.cursor-ring{
+  transform: translate( -50%, -50%) scale(1.5);
+  border-color:#c9b37e;
+} 
+* {cursor: none;}
+body{
+    animation: fadeIn 0.5s ease forwards;
+  }
+  @keyframes fadeIn {
+    from{
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-out{
+    animation : fadeOut 0.4s ease forwards;
+  }
+  @keyframes fadeOut {
+    from{
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to{
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+</style>
+    </head>
+    <div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div> 
+    <body>
+         <nav>
+  <!-- Left -->
+  <div class="nav-menu">
+    <a href="index8.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="artist.html">Artist</a>
+    <a href="work2.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact1.html">Contact</a>
+  </div>
+  <!-- Right -->
+  <div class="brand">NOIRE</div>
+</nav>
+<section class="contact-wrapper">
+    <div class="contact-header fade-in">
+        <h1>CONTACT</h1>
+        <p>Curated in shadows.</p>
+    </div>
+    <div class="gallery-overview fade-in">Noire Art Gallery curates contemporary dark art with precision and restarint,where every piece speaks in silence and shadow.</div>
+    <div class="gold-divider fade-in"></div>
+    <div class="team-section fade-in">
+        <div class="team-member">
+            <h3>Isadora Vale</h3>
+            <span>Chief Executive Officer</span>
+            <p>"Art challenges perception,it creates the world we imagine."-Isadora Vale</p>
+        </div>
+        <div class="team-member">
+            <h3>Adrien Laurent</h3>
+            <span>Creative Director</span>
+            <p>"The details of execution define the experience of the art."-Adrien Laurent</p>
+        </div>
+        <div class="team-member">
+            <h3>Mei Lin Zhao</h3>
+            <span>Global Exhibitions Director</span>
+            <p>"The darker the canvas ,the brighter the imagination."-Mei Lin Zhao</p>
+        </div>
+        <div class="team-member">
+            <h3>Rafael Moreno</h3>
+            <span>Director of Acquisitions</span>
+            <p>"Every brushstroke is a dialogue between darkness and light ."-Rafael Moreno</p>
+        </div>
+    </div>
+    <div class="gold-divider fade-in"></div>
+    <div class="philosophy-section fade-in">
+        <p>"Art should comfort the disturbed and disturb the comfortable."-Cesar Cruz</p>
+    </div>
+    <div class="gold-divider fade-in"></div>
+    <section class="featured fade-in">
+        <h4>FEATURED ARTISTS</h4>
+        <details class="center">
+          <summary>Adrain Blackwood</summary>
+          <p>Neo-Noir Abstractions</p>
+          <blockquote>"Silence in composition is more powerful than excess in detail."</blockquote>
+        </details>
+        <div class="row">
+          <details class="left">
+            <summary>Evelyn Moreau</summary>
+            <p>Shadow Realism</p>
+            <blockquote>"Light is meaningful only because shadow defines it." </blockquote>
+          </details>
+        <details class="right">
+            <summary>Sebestian Whitfield</summary>
+            <p>Surreal Darkness</p>
+            <blockquote>"Minimalism is not absence. It is controlled intention."</blockquote>
+          </details>
+        </div>
+      </section>
+        <div class="gold-divider fade-in"></div>
+    <div class="location-section fade-in">
+        <div class="location-item">
+            <h3>Address</h3>
+            <p>21 Crescent Street,London,UK</p>
+        </div>
+        <div class="location-item">
+            <h3>Email</h3>
+            <p>info@noiregallery.com</p>
+        </div>
+        <div class="location-item">
+            <h3>Social</h3>
+            <p>Instagram/Behance/LinkedIn</p>
+        </div>
+    </div>
+    <div class="gold-divider fade-in"></div>
+
+  </section>
+  
+<footer class="luxury-footer fade-in">
+    <span>© Noire — Curated Darkness
+    </span>
+  </footer>
+  <script>
+     const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+       if(entry.isIntersecting) {
+         entry.target.classList.add('visible');
+         observer.unobserve(entry.target);
+        }
+      });
+    } , {threshold:0.1});
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+    const dot = document.getElementById('cursorDot');
+document.addEventListener('mousemove', (e) => {
+  dot.style.left = e.clientX + 'px';
+  dot.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a ,button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+  
+});
+  el.addEventListener('mouseleave', () => {
+  });
+});
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if(
+      href &&
+      !href.startsWith('#') &&
+      !href.startsWith('http') &&
+      !href.startsWith('mailto')
+    ) {
+      e.preventDefault();
+      document.body.classList.add('fade-out');
+      
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400);
+    }
+  });
+});
+  </script>
+    </body>
+    </html>

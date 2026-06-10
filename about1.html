@@ -1,0 +1,255 @@
+<DOCTYPE html>
+<html>
+<head>
+  <title>Noire | About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+  :root{--black:#050505;--ivory:#f5f2ea;--gold:#fbbb0c;--grey:#a09b91;}
+  body{background: var(--black);color: var(--ivory);}
+  /* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 70px;
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  gap: 38px;
+  color: #d6d6d6;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #d6d6d6;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #f5d27a;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #f5d27a, #caa64d);
+  transition: 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+/* Brand */
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #f5d27a;
+}
+
+
+/*ABOUT HERO */
+.about-hero {
+  height: 100vh;
+  background-image: url("images/abouthero.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.about-hero-content {
+  position: relative;
+  text-align: center;
+  color: #e6e6e6;
+}
+
+.about-hero h1 {
+  font-size: 72px;
+  letter-spacing: 4px;
+}
+
+.about-hero p {
+  font-size: 22px;
+  color: #c9b37e;
+}
+/* ABOUT TEXT */
+.about {
+  max-width: 1000px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.about p {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.hero-content{position: relative;z-index:2; text-align:center;max-width: 900px;}
+.hero-content h1 {font-size: 5rem;font-family: "Cormorant Garamond",serif;margin:20px 0;}
+.hero-content p {color: var(--grey);font-size: 1.1rem;}
+/* GOLD DIVIDER */
+.gold-divider {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(to right, #c9b37e, #f5e6b0, #c9b37e);
+  margin: 60px auto;
+}
+
+/* QUOTE SECTION */
+.quote-section {
+  padding: 160px 10%;
+  text-align: center;
+  background: #080808;
+}
+
+.quote-section blockquote {
+  font-size: 2.8rem;
+  font-style: italic;
+  color: var(--gold);
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-family: "Cormorant Garamond",serif;
+}
+.overlay{position: absolute;inset: 0;background: rgba(0,0,0,0.7);}
+.story{padding: 140px 12%;}
+.story-grid{display: grid;grid-template-columns: 1fr 1.5fr;gap:100px}
+.story-left span{color: var(--gold);letter-spacing: 4px;text-transform: uppercase;}
+.story-left h2{margin-top: 20px;font-size: 3rem;font-family: "Cormorant Garamond",serif;}
+.story-right p{color: var(--grey);line-height: 2;font-size: 1.05rem;}
+.philosophy{padding: 160px 15%;text-align: center;}
+.section-label{color: var(--gold);letter-spacing: 4px;text-transform: uppercase;}
+.philosophy h2{margin: 25px 0;font-size: 3rem;font-family: "Cormorant Garamond",serif; }
+.philosophy p{max-width: 800px;margin: auto;line-height: 2;color: var(--grey);}
+.timeline{padding: 140px 15%;}
+.timeline h2{text-align: center;margin-bottom: 80px;font-size: 3rem;font-family:"Cormorant Garamond",serif;}
+.timeline-item{border-left: 1px solid var(--gold);padding-left: 40px;margin-bottom: 60px;}
+.timeline-item span{color: var(--gold);}
+.timeline-item h3{margin:10px 0;}
+.timeline-item p{color: var(--gold);}
+.vision{padding:180px 15%;text-align: center;}
+.vision h2{font-size: 3rem;margin-bottom: 30px;font-family:"Cormorant Garamond",serif; }
+.vision p{max-width: 800px;margin: auto;color: var(--grey);line-height: 2;}
+</style>
+</head>
+
+<nav>
+  <div class="nav-menu">
+  <a href="index8.html">Home</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="artist.html">Artist</a>
+  <a href="work2.html">Work</a>
+  <a href="about.html">About</a>
+  <a href="contact1.html">Contact</a>
+  </div>
+<div class="brand">NOIRE</div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="about-hero">
+  <div class="about-hero-content">
+    <h1>About Noire</h1>
+    <p>Where shadows reveal meaning</p>
+  </div>
+</section>
+
+<!-- GOLD DIVIDER -->
+<div class="gold-divider"></div>
+
+<!-- ABOUT TEXT -->
+<section class="story">
+<div class="story-grid">
+    <div class="story-left">
+        <span>Our Story</span>
+        <h2>The Language of Darkness</h2>
+    </div>
+    <div class="story-right">
+  <p>
+    Noire is a contemporary art gallery shaped by contrast, silence, and
+    sophistication. Rooted in the belief that darkness enhances perception,
+    Noire curates experiences that unfold slowly—luxuriously.Each exhibition is a dialogue between restraint and emotion, inviting the
+    viewer into a space where art is not observed, but felt.
+      Noire Art gallery functions as a quiet viewing environment. The gallery regularly features original paintings, mixed media works, charcoal studies,and textural canvas compositions. Eah piece is either unique or produced in strictly limited editions, reinforcing the emphasis on rarity and performance.Collectors, researchers, and private patrons engage with gallery through aquisition requests and curated viewings. Every work presented within Noire Art Gallery
+      reflects a commitment to disciplined visual language and the enduring relevance of darkness as an artist medium.
+    </p> </div>
+</div>
+</section>
+
+<!-- QUOTE SECTION -->
+<section class="quote-section">
+  <blockquote>
+    “In darkness, art speaks its truest language.”
+  </blockquote>
+</section>
+
+<!-- GOLD DIVIDER -->
+<div class="gold-divider"></div>
+
+<section class="philosophy">
+    <span class="section-label">Curartorial Philosophy</span>
+    <h2>Presence restrained</h2>
+  <p>
+    Drakness within Noire is not a void.
+    It is a delibrate reduction.
+
+    In removing noise, form becomes 
+    unavoidable.
+    Meaning becomes slower, heavier, and more intimate.
+  </p>
+</section>
+<section class="timeline">
+    <h2>Gallery Journey</h2>
+    <div class="timeline-item">
+        <span>2021</span>
+        <h3>Foundation</h3>
+        <p>The first concept of Noire emerges</p>
+    </div>
+    <div class="timeline-item">
+        <span>2022</span>
+        <h3>First Exhibition</h3>
+        <p>A collection exploring silence and form.
+        </p>
+    </div>
+    <div class="timeline-item">
+        <span>2024</span>
+        <h3>Expansion</h3>
+        <p>Curated digital exhibitions launched.</p>
+    </div>
+</section>
+<section class="vision">
+    <h2>A Place for Reflection</h2>
+    <p>Beyond galleries and exhibtions,
+       Noire exists as a sanctuary for those 
+       who seek depth, nuance and thoughtful 
+       engagement with contemporary art.
+    </p>
+</section>
+
+</body>
+</html>

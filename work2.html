@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Works</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+:root{
+  --black:#000;
+  --gold:#c6a75e;
+  --white:#f2f2f2;
+}
+.fade-in{opacity: 0;transform: translateY(30px);transition: opacity 0.7s ease,transform 0.7s ease;}
+.fade-in.visible{opacity: 1;transform: translateY(0);}
+.fade-in:nth-child(2) {transition-delay: 0.1s; }
+.fade-in:nth-child(3) {transition-delay: 0.2s; }
+.fade-in:nth-child(4) {transition-delay: 0.3s; }
+.fade-in:nth-child(5) {transition-delay: 0.4s; }
+.fade-in:nth-child(6) {transition-delay: 0.5s; }
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  cursor:none;
+}
+
+body{
+  background:var(--black);
+  font-family:Arial, sans-serif;
+  color:var(--white);
+}
+.modal-form label{margin-bottom: 6px;display:block;font-family: 'Playfair Display', serif ;font-size:14px;}
+.modal-form input,.modal-form textarea,.modal-form select{width: 100%;padding:12px;background:#1a1a1a ;margin: 10px 0;border:none;font-family: inherit;color:#bbb}
+.modal-form button{background:#c6a75e;cursor:pointer;font-family: inherit;}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 70px;
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  gap: 38px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #d6d6d6;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #f5d27a;
+  color: #f5d27a;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #f5d27a, #caa64d);
+  transition: 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+.container{padding: 40px 8% 0 8%;}
+/* Brand */
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #f5d27a;
+}
+.filter-bar{display: flex;gap:12px;justify-content: center;padding: 40px 20px;flex-wrap: wrap;}
+.filter-btn{background: transparent;border: 1px solid rgba(255, 215, 0, 0.15);color:#aaa;padding: 10px 24px;font-size: 11px;letter-spacing: 3px;text-transform: uppercase;cursor: pointer;transition: all 0.3s;}
+.filter-btn:hover{border-color: #c9b37e;color: #c9b37e;}
+.filter-btn.active{border-color: #c9b37e;color: #c9b37e;background: rgba(201, 179, 126, 0.08);}
+.artwork-card{transition: opacity 0.4s ,transform 0.4s;}
+.artwork-card.hidden{display: none;}
+
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  padding:60px;
+}
+
+.gallery img{
+  width:100%;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.gallery img:hover{
+  opacity:0.7;
+}
+.card{background: var(--card);cursor: pointer;transition: 0.3s;}
+.card:hover{transform: translateY(-5px);}
+.card-img{width:100%;min-height: 350px;object-fit: cover;}
+.card-content{padding:20px;}
+.card-content h3{margin-bottom: 8px;}
+.card-content p{font-size:14px;color:#bbb;}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  justify-content:center;
+  align-items:center;
+  padding: 20px;
+  transition: 0.3s;
+}
+.modal-active{visibility: visible;opacity: 1;}
+
+.modal-container{
+  display:flex;
+  width:90%;
+  max-width:1000px;
+  background:#111;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  height: 85vh;
+  padding: 40px;
+  gap:40px;
+}
+
+.modal-image{
+  display: flex;
+flex: 1;
+justify-content: center;
+align-items: center;}
+
+.modal-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.modal-form{
+  flex:1;
+  padding:50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width: 50%;
+}
+
+.modal-form h2{
+  font-family: 'Playfair Display',serif;
+  text-align: center;
+    display: block;
+    font-size: 22px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c9b37e;
+    margin-bottom: 40px;
+    
+
+
+}
+#artMeta{text-align: center;margin-bottom: 25px;color: #bbb;}
+
+.modal-form input,
+.modal-form button{
+  width:100%;
+  padding:12px;
+  margin:12px 0;
+  border:none;
+}
+
+.modal-form input{
+  background:#222;
+  color:white;
+}
+
+.modal-form button{
+  background:var(--gold);
+  cursor:pointer;
+}
+
+.close-btn{
+  background:transparent;
+  color:var(--white);
+  border:1px solid var(--white);
+}
+.container{padding: 40px 8% 0 8%;}
+.gold-divider {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(to right, #c9b37e, #f5e6b0, #c9b37e);
+  margin: 60px auto;
+}
+.container h1 {
+      letter-spacing: 6px;
+      font-size: 40px;
+      color: #c6a75e;
+      margin-bottom : 60px;
+      font-weight: 400;
+      margin-top: 40px;
+    }
+.luxury-footer {
+      padding: 70px 20px;
+      text-align: center;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #555;
+    }
+ .cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #c9b37e;
+  border-radius: 50%;
+  position: fixed;
+  top:0;
+  left:0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate( -50%, -50%);
+  transition: transform 0.1 ease;
+}
+.cursor-ring {
+width: 32px;
+height: 32px;
+border: 1px solid rgba(201, 179, 126, 0.5);
+position: fixed;
+top: 0;
+left: 0;
+pointer-events: none;
+z-index: 9998;
+transform: translate( -50%, -50%);
+transition: all  0.15s ease;
+}
+a:hover ~ .cursor-ring,
+button:hover ~.cursor-ring{
+  transform: translate( -50%, -50%) scale(1.5);
+  border-color:#c9b37e;
+}
+body{
+    animation: fadeIn 0.5s ease forwards;
+  }
+  @keyframes fadeIn {
+    from{
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-out{
+    animation : fadeOut 0.4s ease forwards;
+  }
+  @keyframes fadeOut {
+    from{
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to{
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  } 
+
+</style>
+</head>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div> 
+<body>
+    <nav>
+  <!-- Left -->
+  <div class="nav-menu">
+    <a href="index8.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="artist.html">Artist</a>
+    <a href="work2.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact1.html">Contact</a>
+  </div>
+
+  <!-- Right -->
+  <div class="brand">NOIRE</div>
+</nav>
+<div class="container">
+<h1>STUDIO</h1></div>
+<div class="gold-divider"></div>
+<div class="gallery">
+  <div class="card fade-in" data-category="figurative" >
+   <img src="images/art30.jpg"  alt= "Ivory in Obsidian by Amara Voss" data-title="Ivory in Obsidian" onclick="openForm('Ivory in Obsidian',this.src)">
+  <div class="card-content">
+    <h3>Ivory in Obsidian</h3>
+    <p>Amara Voss.2026</p>
+   </div></div>
+    <div class="card fade-in" data-category="figurative">
+    <img src="images/art12.jpg" alt="Opehlia Aeterna by Elian Moreau" data-title="Opehlia Aeterna" onclick="openForm('Opehlia Aeterna',this.src)">
+  
+  <div class="card-content">
+     <h3>Opehlia Aeterna</h3>
+                <p>Elian Moreau.2018</p>
+               </div></div>
+    <div class="card fade-in" data-category="figurative">  
+    <img src="images/art11.jpg" alt="Charcoal on Linen by Lucien Noir"  data-title="Charcoal on Linen" onclick="openForm('Charcoal on Linen',this.src)">
+  
+  <div class="card-content">
+     <h3>Charcoal on Linen</h3>
+    <p>Lucien Noir.2023</p>
+   
+   </div></div>
+   <div class="card fade-in" data-category="figurative">  
+    <img src="images/art3.jpg" alt="Untitled IV by Elara Noctis" data-title="Untitled IV" onclick="openForm('Untitled IV',this.src)">
+  
+  <div class="card-content">
+     <h3>Untitled IV</h3>
+    <p>Elara Noctis.2024</p>
+   
+   </div></div>
+   
+  <div class="card fade-in" data-category="figurative">  
+    <img src="images/art5.jpg" alt="Silent Reliquary by Alaric Mourne" data-title="Silent Reliquary" onclick="openForm('Silent Reliquary',this.src)">
+  
+  <div class="card-content">
+     <h3>Silent Reliquary</h3>
+    <p>Alaric Mourne.2021</p>
+   
+   </div></div>
+   <div class="card fade-in" data-category="figurative">  
+    <img src="images/art14.jpg" alt="Midnight Bloom by Nyra Solen"  data-title="Midnight Bloom" onclick="openForm('Midnight Bloom',this.src)">
+  
+  <div class="card-content">
+     <h3>Midnight Bloom</h3>
+    <p>Nyra Solenne.2022</p>
+   
+   </div></div>
+    <div class="card fade-in" data-category="figurative">  
+    <img src="images/art4.jpg"   alt="Ash Cathedral by Lin Zing Chao" data-title="Ash Cathedral" onclick="openForm('Ash Cathedral',this.src)">
+  
+  <div class="card-content">
+     <h3>Ash Cathedral</h3>
+    <p>Lin Zing Chao.2023</p>
+   
+   </div></div>
+   <div class="card fade-in" data-category="figurative">  
+    <img src="images/art7.jpg"  alt="Veil of the Abyss by Selene Arkwright" data-title="Veil of the Abyss" onclick="openForm('Veil of the Abyss',this.src)">
+  
+  <div class="card-content">
+     <h3>Veil of the Abyss</h3>
+    <p>Selene Arkwright.2024</p>
+   
+   </div></div>
+   <div class="card"data-category="figurative">  
+    <img src="images/art13.jpg" alt="Nocturne Fracture by Magnus Thorne"  data-title="Nocturne Fracture" onclick="openForm('Nocturne Fracture',this.src)">
+  
+  <div class="card-content">
+     <h3>Nocturne Fracture</h3>
+    <p>Magnus Thorne.2021</p>
+   
+   </div></div>
+  
+   </div>
+    
+<!-- PURCHASE MODAL -->
+<div class="modal" id="purchaseModal">
+  <div class="modal-container">
+
+    <!-- LEFT -->
+    <div class="modal-image">
+      <img id="modalImage" alt="" >
+    </div>
+
+    <!-- RIGHT -->
+    <div class="modal-form">
+      <h2 id="artTitle"></h2>
+      
+      <form action="thankyou.html" method="GET">
+        <label>FULL NAME</label>
+                      <input type="text" required>
+                      <label>EMAIL</label>
+                      <input type="email" required>
+                      <label>ARTWORK</label>
+                      <input type="text" id="selectedArtwork" name="artwork" reaonly>
+                       <label>COLLECTOR</label>
+                       <select required>
+                        <option>Private collector</option>
+                        <option>Institution</option>
+                        <option>First-time Buyer</option>
+                       </select>
+                       <label>MESSAGE</label>
+                      <textarea rows="4"></textarea>
+                       <button type="submit">SUBMIT REGISTRATION</button>
+      </form>
+
+      <button class="close-btn" onclick="closeForm()">Close</button>
+    </div>
+
+  </div>
+</div>
+<footer class="luxury-footer">
+    <span>© Noire — Curated Darkness
+    </span>
+  </footer>
+<!-- HTML above -->
+
+<script>
+const modal = document.getElementById("purchaseModal");
+const modalImage = document.getElementById("modalImage");
+const artTitle = document.getElementById("artTitle");
+const selectedArtwork = document.getElementById("selectedArtwork");
+
+document.querySelectorAll(".gallery img").forEach(img => {
+  img.addEventListener("click", function () {
+
+    modal.style.display = "flex";
+
+    modalImage.src=this.src;
+
+    const title= this.getAttribute("data-title");
+    artTitle.textContent = title;
+    selectedArtwork.value = title;
+  });
+});
+
+function closeForm() {
+  modal.style.display = "none";
+}
+const filterBtns = document.querySelectorAll('.filter-btn');
+const artworkCards = document.querySelectorAll('.artwork-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    artworkCards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.classList.remove('hidden');
+      }else{card.classList.add('hidden');}
+    });
+  });
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+} , {
+  threshold:0.1
+});
+document.querySelectorAll('.fade-in').forEach(el => {
+  observer.observe(el);
+});
+const dot = document.getElementById('cursorDot');
+document.addEventListener('mousemove', (e) => {
+  dot.style.left = e.clientX + 'px';
+  dot.style.top = e.clientY + 'px';
+
+});
+document.querySelectorAll('a ,button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+  
+});
+  el.addEventListener('mouseleave', () => {
+  
+});
+});
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if(
+      href &&
+      !href.startsWith('#') &&
+      !href.startsWith('http') &&
+      !href.startsWith('mailto')
+    ) {
+      e.preventDefault();
+      document.body.classList.add('fade-out');
+      
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400);
+    }
+  });
+});
+</script>
+
+</body>
+</html>
+
+
